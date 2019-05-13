@@ -21,12 +21,11 @@ sudo git clone https://github.com/interpretable/install ./
 sudo a2enmod rewrite
 sudo service apache2 restart
 
-
 #copy apache configuration file
+sudo cp interpretable.conf /etc/apache2/site-available/
 sudo a2ensite interpretable.conf
-# ( yassin ) download here laravel script
-#sudo chmod 755 create-database.sh
-#sudo ./create-database.sh interpretable root erasme
+sudo a2dissite interpretable.conf
+sudo service apache2 restart
 
 # yassin finir install du back office - installer node aussi 
 sudo sh ./start_dev.sh
