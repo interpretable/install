@@ -30,6 +30,7 @@ sudo a2dissite 000-default.conf
 sudo service apache2 restart
 
 # yassin finir install du back office - installer node aussi 
+cd "$currentPath"
 sudo sh "$currentPath"/start_dev.sh
 
 #remoteit tools
