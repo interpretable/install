@@ -3,7 +3,7 @@ currentPath="$PWD"
 
 # Install a LAMP Server
 apt-get update
-sudo apt install apache2
+sudo apt -y install apache2
 sudo ufw allow “Apache Full”
 sudo apt -y install php libapache2-mod-php php-mbstring php-xmlrpc php-soap php-mysql php-gd php-xml php-cli php-zip php-bcmath php-tokenizer php-json php-pear
 sudo apt -y install mysql-server
