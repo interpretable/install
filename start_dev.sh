@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Get Current Path
+currentPath="$PWD"
+
 echo 'créer une bdd correspondant aux infos de api.env'
 
 sudo mysql -Bse "CREATE USER 'interpretable'@'localhost' IDENTIFIED BY 'erasme';"
