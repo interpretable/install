@@ -21,14 +21,10 @@ cd ..
 
 
 # Sets acces permission
-sudo chown -R www-data:www-data /interpretabble-api 
-sudo usermod -a -G www-data ubuntu
-sudo find /interpretabble-api -type f -exec chmod 644 {} \; 
-sudo find /interpretabble-api  -type d -exec chmod 755 {} \;
-sudo chown -R interpretable:www-data /interpretabble-api 
-
-sudo find /interpretabble-api -type f -exec chmod 664 {} \;    
-sudo find /interpretabble-api  -type d -exec chmod 775 {} \;
+sudo chown -R $USER:www-data interpretabble-api/storage interpretabble-api/bootstrap/cache
+sudo chown -R $USER:www-data interpretabble-front/storage interpretabble-front/bootstrap/cache
+chmod -R 775 interpretabble-api/storage interpretabble-front/storage
+chmod -R 775 interpretabble-api/bootstrap/cache interpretabble-front/bootstrap/cache
 
 
 cp api.env interpretabble-api
