@@ -6,6 +6,7 @@ sudo mysql -Bse "CREATE USER 'interpretable'@'localhost' IDENTIFIED BY 'erasme';
 sudo mysql -Bse "CREATE DATABASE interpretable;"
 sudo mysql -Bse "GRANT ALL PRIVILEGES ON interpretable.* TO 'interpretable'@'localhost';"
 
+cd /var/www/html/
 
 # get the api and Bo from github
 git clone https://github.com/urbanlab/interpretabble-api.git
@@ -44,4 +45,4 @@ cp front.env .env
 rm front.env
 composer update
 php artisan key:generate
-npm install
+#npm install
