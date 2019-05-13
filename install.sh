@@ -1,3 +1,6 @@
+# Get Current Path
+currentPath="$PWD"
+
 # Install a LAMP Server
 apt-get update
 sudo apt install apache2
@@ -11,7 +14,7 @@ sudo mysql_secure_installation
 curl -sS https://getcomposer.org/installer | php
 sudo mv composer.phar /usr/local/bin/composer
 sudo chmod +x /usr/local/bin/composer
-mkdir /var/www/html
+#mkdir /var/www/html
 cd /var/www/html
 sudo rm index.html
 
@@ -21,13 +24,13 @@ sudo a2enmod rewrite
 sudo service apache2 restart
 
 #copy apache configuration file
-sudo cp interpretable.conf /etc/apache2/sites-available
+sudo cp "$currentPath"/interpretable.conf /etc/apache2/sites-available
 sudo a2ensite interpretable.conf
 sudo a2dissite 000-default.conf
 sudo service apache2 restart
 
 # yassin finir install du back office - installer node aussi 
-sudo sh ./start_dev.sh
+sudo sh "$currentPath"/start_dev.sh
 
 #remoteit tools
 sudo apt -y install openssh-server
