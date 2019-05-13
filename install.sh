@@ -15,7 +15,6 @@ mkdir /var/www/html
 cd /var/www/html
 sudo rm index.html
 
-sudo git clone https://github.com/interpretable/install ./
 
 # Enable mod_rewrite
 sudo a2enmod rewrite
