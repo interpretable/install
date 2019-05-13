@@ -2,9 +2,9 @@
 
 echo 'créer une bdd correspondant aux infos de api.env'
 
-CREATE USER 'interpretable'@'localhost' IDENTIFIED BY 'erasme';
-CREATE DATABASE interpretable;
-GRANT ALL PRIVILEGES ON interpretable.* TO 'interpretable'@'localhost';
+sudo mysql -Bse "CREATE USER 'interpretable'@'localhost' IDENTIFIED BY 'erasme';"
+sudo mysql -Bse "CREATE DATABASE interpretable;"
+sudo mysql -Bse "GRANT ALL PRIVILEGES ON interpretable.* TO 'interpretable'@'localhost';"
 
 
 git clone https://github.com/urbanlab/interpretabble-api.git
