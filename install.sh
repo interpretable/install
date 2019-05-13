@@ -21,7 +21,7 @@ sudo a2enmod rewrite
 sudo service apache2 restart
 
 #copy apache configuration file
-sudo cp interpretable.conf /etc/apache2/site-available
+sudo cp interpretable.conf /etc/apache2/sites-available
 sudo a2ensite interpretable.conf
 sudo a2dissite interpretable.conf
 sudo service apache2 restart
