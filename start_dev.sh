@@ -28,7 +28,7 @@ chmod -R 775 interpretabble-api/storage interpretabble-front/storage
 chmod -R 775 interpretabble-api/bootstrap/cache interpretabble-front/bootstrap/cache
 
 
-cp api.env interpretabble-api
+cp "$currentPath"/api.env interpretabble-api
 cd interpretabble-api
 cp api.env .env
 rm api.env
@@ -39,7 +39,7 @@ php composer dump-autoload
 php artisan db:seed
 cd ..
 
-cp front.env interpretabble-front
+cp "$currentPath"/front.env interpretabble-front
 cd interpretabble-front
 cp front.env .env
 rm front.env
