@@ -44,4 +44,4 @@ sudo connectd_installer
 #installer PM2
 
 
-echo 'http://localhost/interpretabble-front/public/scenarios'
+echo 'http://localhost/front/public/scenarios'

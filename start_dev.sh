@@ -12,27 +12,27 @@ sudo mysql -Bse "GRANT ALL PRIVILEGES ON interpretable.* TO 'interpretable'@'loc
 cd /var/www/html/
 
 # get the api and Bo from github
-git clone https://github.com/urbanlab/interpretabble-api.git
-git clone https://github.com/urbanlab/interpretabble-front.git
+git clone https://github.com/interpretable/api.git
+git clone https://github.com/interpretable/front
 
-cd interpretabble-api
+cd api
 git checkout dev
 cd ..
 
-cd interpretabble-front
+cd front
 git checkout dev
 cd ..
 
 
 # Sets acces permission
-sudo chown -R $USER:www-data interpretabble-api/storage interpretabble-api/bootstrap/cache
-sudo chown -R $USER:www-data interpretabble-front/storage interpretabble-front/bootstrap/cache
-chmod -R 775 interpretabble-api/storage interpretabble-front/storage
-chmod -R 775 interpretabble-api/bootstrap/cache interpretabble-front/bootstrap/cache
+sudo chown -R $USER:www-data api/storage api/bootstrap/cache
+sudo chown -R $USER:www-data front/storage front/bootstrap/cache
+chmod -R 775 api/storage front/storage
+chmod -R 775 api/bootstrap/cache front/bootstrap/cache
 
 
-cp "$currentPath"/api.env interpretabble-api
-cd interpretabble-api
+cp "$currentPath"/api.env api
+cd api
 cp api.env .env
 rm api.env
 composer update
@@ -42,8 +42,8 @@ php composer dump-autoload
 php artisan db:seed
 cd ..
 
-cp "$currentPath"/front.env interpretabble-front
-cd interpretabble-front
+cp "$currentPath"/front.env front
+cd front
 cp front.env .env
 rm front.env
 composer update
