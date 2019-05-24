@@ -29,19 +29,19 @@ sudo a2ensite interpretable.conf
 sudo a2dissite 000-default.conf
 sudo service apache2 restart
 
-# yassin finir install du back office - installer node aussi 
+# Laravel setup
 cd "$currentPath"
 sudo sh "$currentPath"/start_dev.sh
 
 #remoteit tools
 sudo apt -y install openssh-server
 sudo systemctl status ssh
-curl -LkO https://raw.githubusercontent.com/remoteit/installer/master/scripts/auto-install.sh
-chmod +x ./auto-install.sh
-sudo ./auto-install.sh
-sudo connectd_installer
+#curl -LkO https://raw.githubusercontent.com/remoteit/installer/master/scripts/auto-install.sh
+#chmod +x ./auto-install.sh
+#sudo ./auto-install.sh
+#sudo connectd_installer
 
 #installer PM2
 
-
+# Default BO url
 echo 'http://localhost/front/public/scenarios'

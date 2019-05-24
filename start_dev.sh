@@ -3,8 +3,8 @@
 # Get Current Path
 currentPath="$PWD"
 
-echo 'créer une bdd correspondant aux infos de api.env'
 
+echo 'créer une bdd correspondant aux infos de api.env'
 sudo mysql -Bse "CREATE USER 'interpretable'@'localhost' IDENTIFIED BY 'erasme';"
 sudo mysql -Bse "CREATE DATABASE interpretable;"
 sudo mysql -Bse "GRANT ALL PRIVILEGES ON interpretable.* TO 'interpretable'@'localhost';"
@@ -15,6 +15,7 @@ cd /var/www/html/
 git clone https://github.com/interpretable/api.git
 git clone https://github.com/interpretable/front
 
+# Switch to dev branch
 cd api
 git checkout dev
 cd ..
@@ -31,6 +32,7 @@ chmod -R 775 api/storage front/storage
 chmod -R 775 api/bootstrap/cache front/bootstrap/cache
 
 
+# Install dependencies and create table/seed in db
 cp "$currentPath"/api.env api
 cd api
 cp api.env .env
@@ -42,6 +44,7 @@ php composer dump-autoload
 php artisan db:seed
 cd ..
 
+# Install dependencies 
 cp "$currentPath"/front.env front
 cd front
 cp front.env .env
