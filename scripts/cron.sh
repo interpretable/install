@@ -6,30 +6,26 @@ read id
 
 echo $id
 
-echo ' ' >> ~/.bashrc
-echo '# Interpretable machine id for monitoring' >> ~/.bashrc
-echo "export INTERPRETABLEID=$id" >> ~/.bashrc
+echo $id > $HOME/id.txt
+
 
 
 # https://www.golinuxcloud.com/create-schedule-cron-job-shell-script-linux/
 
 
 # Setup ip sender
-cp sendIp.sh $HOME
+cp scripts/sendIp.sh $HOME
 touch $HOME/ip.txt
 
 touch /etc/cron.d/interpretable
-echo "* * * * * sh sendIp.sh" >> /etc/cron.d/interpretable
-
-
-"* * * * * sh senIp.sh"
-# * * * * * sh senIp.sh
-
+echo "* * * * * sh $HOME/sendIp.sh" >> /etc/cron.d/interpretable
 
 #Setup listenner
-#git clone https://github.com/interpretable/feather_code.git
+git clone https://github.com/interpretable/feather_code.git
 
-# cp feather_code/shutdownListenner.py $HOME
-# @reboot shutdownListenner.py
+cp feather_code/shutdown_listener.py $HOME
+echo "@reboot $HOME/shutdownListenner.py" >> /etc/cron.d/interpretable
 
- sudo crontab -l  echo '* * * * * sh www/interpretable/install/sendIp.sh' | crontab -
+rm -r feather_code
+
+echo "CRON TASKS INSTALLED"

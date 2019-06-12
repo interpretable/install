@@ -1,5 +1,6 @@
 # Interpretable installer
 
+For testing sudo docker -ti --name interpretable -p 80:8000
 
 ## File Structure
 The sh files are separeted as follows :
