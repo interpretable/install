@@ -1,3 +1,5 @@
+#WIP 
+
 # Get Current Path
 currentPath="$PWD"
 

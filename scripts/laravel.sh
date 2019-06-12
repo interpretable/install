@@ -3,6 +3,17 @@
 # Get Current Path
 currentPath="$PWD"
 
+# Enable mod_rewrite
+sudo a2enmod rewrite
+sudo service apache2 restart
+
+#copy apache configuration file
+sudo cp "$currentPath"/config/interpretable.conf /etc/apache2/sites-available
+sudo a2ensite interpretable.conf
+sudo a2dissite 000-default.conf
+sudo service apache2 restart
+
+
 
 echo 'créer une bdd correspondant aux infos de api.env'
 sudo mysql -Bse "CREATE USER 'interpretable'@'localhost' IDENTIFIED BY 'erasme';"
@@ -33,7 +44,7 @@ chmod -R 775 api/bootstrap/cache front/bootstrap/cache
 
 
 # Install dependencies and create table/seed in db
-cp "$currentPath"/api.env api
+cp "$currentPath"/config/api.env api
 cd api
 cp api.env .env
 rm api.env
@@ -45,10 +56,11 @@ php artisan db:seed
 cd ..
 
 # Install dependencies 
-cp "$currentPath"/front.env front
+cp "$currentPath"/config/front.env front
 cd front
 cp front.env .env
 rm front.env
 composer update
 php artisan key:generate
-#npm install
+
+

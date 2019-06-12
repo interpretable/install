@@ -1,5 +1,11 @@
 # Interpretable installer
 
+
+## File Structure
+The sh files are separeted as follows :
+install.sh > installs the main LAMP libraries and vhosts
+start_dev.sh > installs creates
+
 ## API and BO installation
 
 to install the API and BO just launch the install.sh file
@@ -29,6 +35,13 @@ The installer will :
 - Create the table structure in db
 - Seeding the db with the default cards/thematic/machines
 - Install the api php dependencies with composer 
-- Generate the laravel APP_KEY  
+- Generate the laravel APP_KEY
+
+TODO
+- Set a Machine id in global variables
+- move sendIp.sh to $HOME
+- create the ip.txt in $HOME
+- setup a cron task every hour to launch send ip
+- setup a cron task to launch the feather python shutdown watcher at every boot
 
 ## Front installation
