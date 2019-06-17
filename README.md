@@ -51,3 +51,8 @@ TODO
 The goal of the Automate flowchart is to preserve the phone's battery. 
 The phone is connected to the machine with an USB cable. If the PC is off, the flight mode is activated. Otherwise, the flight mode is desactivated and the connection sharing througt USB is allowed. 
 You just have to install the mobile app *Automate* on a rooted phone (https://www.kingoapp.com/). Then, download on the phone the .flo file, open the app, add the flowchart from the file and press start. 
+
+This is an image of the flowchart : 
+![alt text][logo]
+
+[logo]: https://github.com/interpretable/install/blob/master/Test%20hotspot%20interpretable.png "Automate flowchart"
