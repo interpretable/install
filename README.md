@@ -21,6 +21,9 @@ When arriving on the mysql secure installation screen choose:
  - Remove the test database **YES**
  - Reload privilege table **YES**
 
+
+
+
 ### Installation details
 
 The installer will :
@@ -37,6 +40,18 @@ The installer will :
 - Seeding the db with the default cards/thematic/machines
 - Install the api php dependencies with composer 
 - Generate the laravel APP_KEY
+
+## VPN Setup
+For experimentation purpose a VPN is used to access to the machines (ssh and monitoring)
+### Configuration
+Load your openvpn certificat trough ubuntu nm-connection-editor
+Launch a command prompt and type 
+> nm-connection-editor
+Click on the add button bottem left and select **Import a saved VPN configuration** 
+Load your VPN configuration
+
+Once loaded and connected chose (always on the nm-connection-editor) the network you'r using and click on the cog on the bottom left of the window go to **General** tab and select always connect to vpn and the VPN you've added
+
 
 TODO
 - Set a Machine id in global variables
