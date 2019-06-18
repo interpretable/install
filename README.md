@@ -71,3 +71,30 @@ This is an image of the flowchart :
 ![alt text][logo]
 
 [logo]: https://github.com/interpretable/install/blob/master/Test%20hotspot%20interpretable.png "Automate flowchart"
+
+
+## FAQ
+
+### No ip adress is sent to the Monitoring interface (front/public/machines)
+In some cases the install script fails to install the cron tasks used to send the ip adress
+you can manually add the cron task by lauching a Command prompt 
+> crontab -e
+Select your favorite text editor
+in the bottom of the file add
+```cron
+
+* * * * * sh $HOME/sendIp.sh
+@reboot python3 $HOME/shutdownListenner.py
+```
+
+### I cannot shutdown the machine :/
+In some cases the install script fails to install the cron tasks used to launch a runner watching for the udp shutdown message
+you can manually add the cron task by lauching a Command prompt 
+> crontab -e
+Select your favorite text editor
+in the bottom of the file add
+```cron
+
+* * * * * sh $HOME/sendIp.sh
+@reboot python3 $HOME/shutdownListenner.py
+```
