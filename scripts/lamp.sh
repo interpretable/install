@@ -23,5 +23,10 @@ sudo apt -y install openssh-server
 #Install python for feather shutdown
 sudo apt-get install python3.6
 
+# Disable auto upgrade to save 4g data
+sudo echo 'APT::Periodic::Update-Package-Lists "0";' > /etc/apt/apt.conf.d/20auto-upgrades
+sudo echo 'APT::Periodic::Unattended-Upgrade "1";' >> /etc/apt/apt.conf.d/20auto-upgrades
+
+
 
 echo 'LAMP SERVER INSTALLED'
