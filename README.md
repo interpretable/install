@@ -53,6 +53,9 @@ Load your VPN configuration
 Once loaded and connected chose (always on the nm-connection-editor) the network you'r using and click on the cog on the bottom left of the window go to **General** tab and select always connect to vpn and the VPN you've added
 
 
+## Feather Setup for shutdown and wake up lan
+https://github.com/interpretable/feather_code
+
 TODO
 - Set a Machine id in global variables
 - move sendIp.sh to $HOME
@@ -71,3 +74,30 @@ This is an image of the flowchart :
 ![alt text][logo]
 
 [logo]: https://github.com/interpretable/install/blob/master/Test%20hotspot%20interpretable.png "Automate flowchart"
+
+
+## FAQ
+
+### No ip adress is sent to the Monitoring interface (front/public/machines)
+In some cases the install script fails to install the cron tasks used to send the ip adress
+you can manually add the cron task by lauching a Command prompt 
+> crontab -e
+Select your favorite text editor
+in the bottom of the file add
+```cron
+
+* * * * * sh $HOME/sendIp.sh
+@reboot python3 $HOME/shutdownListenner.py
+```
+
+### I cannot shutdown the machine :/
+In some cases the install script fails to install the cron tasks used to launch a runner watching for the udp shutdown message
+you can manually add the cron task by lauching a Command prompt 
+> crontab -e
+Select your favorite text editor
+in the bottom of the file add
+```cron
+
+* * * * * sh $HOME/sendIp.sh
+@reboot python3 $HOME/shutdownListenner.py
+```
