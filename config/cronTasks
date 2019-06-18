@@ -1,3 +1,3 @@
 
 * * * * * sh $HOME/sendIp.sh
-@reboot $HOME/shutdownListenner.py
+@reboot python3 $HOME/shutdownListenner.py
