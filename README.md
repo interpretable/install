@@ -53,6 +53,9 @@ Load your VPN configuration
 Once loaded and connected chose (always on the nm-connection-editor) the network you'r using and click on the cog on the bottom left of the window go to **General** tab and select always connect to vpn and the VPN you've added
 
 
+## Feather Setup for shutdown and wake up lan
+https://github.com/interpretable/feather_code
+
 TODO
 - Set a Machine id in global variables
 - move sendIp.sh to $HOME
