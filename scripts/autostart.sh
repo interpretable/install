@@ -18,4 +18,5 @@ echo "Appuyez sur entrée une fois les fichiers placés"
 read ok
 
 cp config/vpn/* /etc/openvpn/
-sudo systemctl openvpn@erasme
+sudo systemctl enable openvpn@erasme
+sudo systemctl start openvpn@erasme
