@@ -7,3 +7,5 @@ sudo sh scripts/autostart.sh
 
 # Default BO url
 echo 'Front access : http://localhost/front/public/scenarios'
+
+echo "Redemarrez la machine afin de prendre en compte la config de openvpn"
