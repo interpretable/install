@@ -1,3 +1,4 @@
+#!/bin/sh
 echo "L'id de votre machine : "
 echo "1 - MDM Bramet - Bron"
 echo "2 - MDM Fontaine-sur-Saône"

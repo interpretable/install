@@ -1,3 +1,5 @@
+#!/bin/sh
+
 # Get Current Path
 currentPath="$PWD"
 
@@ -27,8 +29,6 @@ sudo apt-get install python3.6
 sudo apt-get install network-manager-openvpn
 
 # Disable auto upgrade to save 4g data
-sudo echo 'APT::Periodic::Update-Package-Lists "0";' > /etc/apt/apt.conf.d/20auto-upgrades
-sudo echo 'APT::Periodic::Unattended-Upgrade "1";' >> /etc/apt/apt.conf.d/20auto-upgrades
 
 
 
