@@ -1,6 +1,8 @@
 # Interpretable installer
 
-For testing sudo docker -ti --name interpretable -p 80:8000
+For testing 
+
+sudo docker run -ti --rm --name interpretable -p 80:8000  -v /var/www/interpretable/install/mount:/root ubuntu
 
 ## File Structure
 The sh files are separeted as follows :
@@ -44,23 +46,20 @@ The installer will :
 ## VPN Setup
 For experimentation purpose a VPN is used to access to the machines (ssh and monitoring)
 ### Configuration
-Load your openvpn certificat trough ubuntu nm-connection-editor
-Launch a command prompt and type 
-> nm-connection-editor
-Click on the add button bottem left and select **Import a saved VPN configuration** 
-Load your VPN configuration
-
-Once loaded and connected chose (always on the nm-connection-editor) the network you'r using and click on the cog on the bottom left of the window go to **General** tab and select always connect to vpn and the VPN you've added
+Load your openvpn certificat trough Settings -> Networks -> VPN -> Add from file
+Once saved open a command prompt and type
+> nmcli con
+To get the UUID of your VPN
+Go to display application (bottom left gnome desktop) and search "app" to Launch **App on startup**
+Add a new entry with the command 
+> sh -c "sleep 60 && nmcli con up UUID
+and saveq
 
 
 ## Feather Setup for shutdown and wake up lan
 https://github.com/interpretable/feather_code
 
 TODO
-- Set a Machine id in global variables
-- move sendIp.sh to $HOME
-- create the ip.txt in $HOME
-- setup a cron task every hour to launch send ip
 - setup a cron task to launch the feather python shutdown watcher at every boot
 
 ## Front installation
