@@ -1,3 +1,6 @@
+# Start openvpn server
+@reboot sudo sh $HOME/openvpn.sh
 
-* * * * * sh $HOME/sendIp.sh
+#* * * * * sh $HOME/sendIp.sh
+# Runner watching for shutdown signal
 @reboot python3 $HOME/shutdownListenner.py
