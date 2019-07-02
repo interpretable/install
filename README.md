@@ -60,7 +60,8 @@ and saveq
 https://github.com/interpretable/feather_code
 
 TODO
-- setup a cron task to launch the feather python shutdown watcher at every boot
+- Disable updates
+- Disable lockscreen / sleep
 
 ## Front installation
 
