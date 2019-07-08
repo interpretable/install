@@ -4,6 +4,21 @@ For testing
 
 sudo docker run -ti --rm --name interpretable -p 80:8000  -v /var/www/interpretable/install/mount:/root ubuntu
 
+## PC configuration
+Enter in the setup menu by pressing F2 while powering on the NUC. 
+To allow the Wake On LAN : 
+Click on **Advanced** then **Power**. For "Wake On LAN from S4/S5" choose **Power on, normal boot**. 
+
+To allow the HDMI-CEC : 
+Click on **Devices** then **Onboard devices**. Configurate as the following : 
+- HDMI CEC : checked 
+- TV HDMI port : HDMI 1
+- Wake on TV : From S3/S4/S5
+- Auto turn on TV : from S3/S4/S5 boot
+- Auto turn off TV : when S0 to S3/S4/S5
+
+Finally, press F10 to save and exit. 
+
 ## File Structure
 The sh files are separeted as follows :
 install.sh > installs the main LAMP libraries and vhosts
@@ -60,7 +75,8 @@ and saveq
 https://github.com/interpretable/feather_code
 
 TODO
-- setup a cron task to launch the feather python shutdown watcher at every boot
+- Disable updates
+- Disable lockscreen / sleep
 
 ## Front installation
 
