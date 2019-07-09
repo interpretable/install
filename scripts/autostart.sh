@@ -1,5 +1,21 @@
 #!/bin/sh
 
+
+
+# Disable update routines
+systemctl stop apt-daily.timer
+systemctl disable apt-daily.timer
+systemctl disable apt-daily.service
+systemctl stop apt-daily-upgrade.timer
+systemctl disable apt-daily-upgrade.timer
+systemctl disable apt-daily-upgrade.service
+
+# Disbale lock screen and black screen
+gsettings set org.gnome.desktop.session idle-delay 0
+gsettings set org.gnome.desktop.screensaver lock-enabled false
+
+
+
 # Used to enable the shutdown script and the default vpn connection
 
 #Setup listenner - A TESTER
