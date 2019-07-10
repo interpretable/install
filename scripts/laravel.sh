@@ -4,6 +4,7 @@
 currentPath="$PWD"
 
 # Enable mod_rewrite
+echo "-----------------------------------SETUP VHOST FOR INTERPRETABLE API / FRONT"
 sudo a2enmod rewrite
 sudo service apache2 restart
 
@@ -15,6 +16,7 @@ sudo service apache2 restart
 
 
 
+echo "----------------------------------- CREATING DB FOR API"
 echo 'créer une bdd correspondant aux infos de api.env'
 sudo mysql -Bse "CREATE USER 'interpretable'@'localhost' IDENTIFIED BY 'erasme';"
 sudo mysql -Bse "CREATE DATABASE interpretable;"
@@ -64,3 +66,4 @@ composer update
 php artisan key:generate
 
 
+echo "-----------------------------------API / FRONT INSTALL OK"

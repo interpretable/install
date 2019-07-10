@@ -49,8 +49,9 @@ git clone https://github.com/interpretable/InterprettableApp.git
 
 cp $currentPath/scripts/build-opencv.sh $HOME/Documents/interprettable/
 
+sudo cp $currentPath/config/config.json $HOME/Documents/interprettable/openFrameworks/apps/InterprettableApp/Interprettable/
 
-sh ./$HOME/Documents/interprettable/build-opencv.sh
+sh $HOME/Documents/interprettable/build-opencv.sh
 
 cd $HOME/Documents/interprettable/openFrameworks/apps/InterprettableApp/Interprettable/
 

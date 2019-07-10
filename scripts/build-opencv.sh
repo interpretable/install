@@ -1,6 +1,9 @@
 #!/bin/sh
 
 #download openCV and openCV contrib
+
+echo "-----------------------------------SETUP OPEN_CV"
+
 mkdir opencv
 cd opencv
 wget https://github.com/opencv/opencv/archive/3.4.0.zip

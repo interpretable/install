@@ -40,6 +40,13 @@ When arriving on the mysql secure installation screen choose:
 
 
 
+## Open Frameworks installation
+
+ - instaling the dependencies with the -hwe-18.04 packages confirm **NO**
+ - Do you want to continue **YES**
+ - Do you need to install poco libraries in the system with the following package libpoco-dev **YES**
+
+
 
 ### Installation details
 
