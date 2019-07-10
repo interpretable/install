@@ -8,6 +8,7 @@ echo "-----------------------------------UPDATING APT"
 # update packages
 sudo apt-get update 
 sudo apt install cmake
+sudo apt install curl
 echo "-----------------------------------CREATING FOLDERS"
 cd $HOME/Documents
 # create folder for the project
@@ -35,15 +36,26 @@ sh ./compileOF.sh
 echo "-----------------------------------INSTALL ADDONS"
 cd ../../
 rm -rf addons
-git clone https://github.com/martial/InterprettableAddons addons
+git clone https://github.com/interpretable/InterprettableAddons addons
 
 # adding feature detector
 cd addons
 git clone https://github.com/martial/ofxFeatureDetector
 echo "-----------------------------------INSTALL PROJECT"
-# let's clone the main repo
+# let's clone the main repo<
 cd ../apps
 git clone https://github.com/interpretable/InterprettableApp.git
 
 
-cp $PWD/scripts/build-opencv.sh $HOME/Documents/interprettable
+cp $currentPath/scripts/build-opencv.sh $HOME/Documents/interprettable/
+
+
+sh ./$HOME/Documents/interprettable/build-opencv.sh
+
+cd $HOME/Documents/interprettable/openFrameworks/apps/InterprettableApp/Interprettable/
+
+make clean
+
+make -j4
+
+make RunRelease
