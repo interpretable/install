@@ -42,6 +42,7 @@ When arriving on the mysql secure installation screen choose:
 
 ## Open Frameworks installation
 
+ - Your system is not updated the can create problems when installing the OF dependencies . Do you want to update all the package now **YES**<>
  - instaling the dependencies with the -hwe-18.04 packages confirm **NO**
  - Do you want to continue **YES**
  - Do you need to install poco libraries in the system with the following package libpoco-dev **YES**
