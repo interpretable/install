@@ -27,11 +27,11 @@ sudo apt -y install openssh-server
 
 #Install python for feather shutdown
 echo "-----------------------------------INSTALL PYTHON"
-sudo apt-get install python3.6
+sudo apt-get -y install python3.6 
 
 # Install open vpn certificate manager
 echo "-----------------------------------INSTALL OPEN VPN"
-sudo apt-get install network-manager-openvpn
+sudo apt-get -y install network-manager-openvpn
 
 # Disable auto upgrade to save 4g data
 

@@ -7,8 +7,8 @@ currentPath="$PWD"
 echo "-----------------------------------UPDATING APT"
 # update packages
 sudo apt-get update 
-sudo apt install cmake
-sudo apt install curl
+sudo apt -y install cmake
+sudo apt -y install curl
 echo "-----------------------------------CREATING FOLDERS"
 cd $HOME/Documents
 # create folder for the project
@@ -54,6 +54,8 @@ sudo cp $currentPath/config/config.json $HOME/Documents/interprettable/openFrame
 sh $HOME/Documents/interprettable/build-opencv.sh
 
 cd $HOME/Documents/interprettable/openFrameworks/apps/InterprettableApp/Interprettable/
+
+cp $currentPath/scripts/run-interpretable.sh $HOME/Documents/
 
 make clean
 
