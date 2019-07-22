@@ -4,6 +4,11 @@ For testing
 
 sudo docker run -ti --rm --name interpretable -p 80:8000  -v /var/www/interpretable/install/mount:/root ubuntu
 
+## Requirements
+
+The installer has been tested on a Ubuntu 18.04 fresh install
+**A stable internet connection is needed**
+
 ## PC configuration
 Enter in the setup menu by pressing F2 while powering on the NUC. 
 To allow the Wake On LAN : 
@@ -64,7 +69,7 @@ Files types you need to put in config/vpn
 ### Intepretable oF autostart
 On the ubuntu GUI go in apps/applications on startup ("Applications au démarrage") 
 Clic on the Add button a promt should open 
-=> Type "Interpretable in Name"
+=> Type "Interpretable" in Name
 => Select the run-interpretable.sh file In Document
 => Clic on add
 
@@ -74,27 +79,36 @@ Clic on the Add button a promt should open
 ### Installation details
 
 The installer will :
-- Install a **LAMP** server
-- Install **Composer**
-- Enable the **a2enmod** on apache for url rewriting on Laravel
-- Add and activate vhost file for intepretable
-- Create the intepretable db and user
-- Clone from github the api and front repository
-- Give the right permission access on folder/files for currentuser
-- Install the api php dependencies with composer 
-- Generate the laravel APP_KEY  
-- Create the table structure in db
-- Seeding the db with the default cards/thematic/machines
-- Install the api php dependencies with composer 
-- Generate the laravel APP_KEY
+- **System behavior :**
+    - Disable updates routines
+    - Disable Lockscreen / black screen
+    - Setup the shutdown listenner
+    - Setup the vpn 
+- **API and FRONT**
+    - Install a **LAMP** server
+    - Install **Composer**
+    - Enable the **a2enmod** on apache for url rewriting on Laravel
+    - Add and activate vhost file for intepretable
+    - Create the intepretable db and user
+    - Clone from github the api and front repository
+    - Give the right permission access on folder/files for currentuser
+    - Install the api php dependencies with composer 
+    - Generate the laravel APP_KEY  
+    - Create the table structure in db
+    - Seeding the db with the default cards/thematic/machines
+    - Install the api php dependencies with composer 
+    - Generate the laravel APP_KEY
+- **openFrameworks**
+    - Download and Compile Open Frameworks
+    - Install the needed oF addons
+    - Download and compile openCv
+    - Download and Compile the intepretable project
+
 
 
 ## Feather Setup for shutdown and wake up lan
 https://github.com/interpretable/feather_code
 
-TODO
-- Disable updates
-- Disable lockscreen / sleep
 
 ## Front installation
 
@@ -124,13 +138,7 @@ in the bottom of the file add
 ```
 
 ### I cannot shutdown the machine :/
-In some cases the install script fails to install the cron tasks used to launch a runner watching for the udp shutdown message
-you can manually add the cron task by lauching a Command prompt 
-> crontab -e
-Select your favorite text editor
-in the bottom of the file add
-```cron
 
-* * * * * sh $HOME/sendIp.sh
-@reboot python3 $HOME/shutdownListenner.py
-```
+Check the shutdown listenner status with
+
+> sudo systemctl status interpretable.service
