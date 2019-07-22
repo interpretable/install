@@ -39,13 +39,35 @@ When arriving on the mysql secure installation screen choose:
  - Reload privilege table **YES**
 
 
+## VPN Setup
+For experimentation purpose a VPN is used to access to the machines (ssh and monitoring)
+
+>VPN certificate setup (put your certificate files in the folder config/vpn )
+>Push Enter when finished
+
+Files types you need to put in config/vpn
+- .conf 
+- .crt
+- .key
+
 
 ## Open Frameworks installation
 
- - Your system is not updated the can create problems when installing the OF dependencies . Do you want to update all the package now **YES**<>
+ - Your system is not updated the can create problems when installing the OF dependencies . Do you want to update all the package now **YES**
  - instaling the dependencies with the -hwe-18.04 packages confirm **NO**
  - Do you want to continue **YES**
  - Do you need to install poco libraries in the system with the following package libpoco-dev **YES**
+
+
+## When installation finished
+
+### Intepretable oF autostart
+On the ubuntu GUI go in apps/applications on startup ("Applications au démarrage") 
+Clic on the Add button a promt should open 
+=> Type "Interpretable in Name"
+=> Select the run-interpretable.sh file In Document
+=> Clic on add
+
 
 
 
@@ -65,18 +87,6 @@ The installer will :
 - Seeding the db with the default cards/thematic/machines
 - Install the api php dependencies with composer 
 - Generate the laravel APP_KEY
-
-## VPN Setup
-For experimentation purpose a VPN is used to access to the machines (ssh and monitoring)
-### Configuration
-Load your openvpn certificat trough Settings -> Networks -> VPN -> Add from file
-Once saved open a command prompt and type
-> nmcli con
-To get the UUID of your VPN
-Go to display application (bottom left gnome desktop) and search "app" to Launch **App on startup**
-Add a new entry with the command 
-> sh -c "sleep 60 && nmcli con up UUID
-and saveq
 
 
 ## Feather Setup for shutdown and wake up lan
