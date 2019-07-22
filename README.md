@@ -139,6 +139,9 @@ in the bottom of the file add
 
 ### I cannot shutdown the machine :/
 
-Check the shutdown listenner status with
+> sudo systemctl restart interpretable.service
+
+If problem persists try to check the logs with
 
 > sudo systemctl status interpretable.service
+
