@@ -13,3 +13,7 @@ sudo sh scripts/openFrameworks.sh
 echo 'Front access : http://localhost/front/public/scenarios'
 
 echo "Redemarrez la machine afin de prendre en compte la config de openvpn"
+
+sudo systemctl restart interpretable.service
+
+reboot
