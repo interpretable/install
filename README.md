@@ -122,6 +122,10 @@ This is an image of the flowchart :
 
 [logo]: https://github.com/interpretable/install/blob/master/Test%20hotspot%20interpretable.png "Automate flowchart"
 
+## Use 
+When Interpretable is launched, two options are available : 
+-> press "D" : debug function. Show the camera view and logs. You also can use it to setup the detection area by pressing "W"
+-> press "W" : setup the detection area (ie the wrapping video) 
 
 ## FAQ
 
