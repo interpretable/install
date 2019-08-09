@@ -55,6 +55,7 @@ Files types you need to put in config/vpn
 - .crt
 - .key
 
+If you do not need a VPN, just pus enter. Otherwise, you need to ask to your network engineer these files. 
 
 ## Open Frameworks installation
 
