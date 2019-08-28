@@ -64,7 +64,9 @@ If you do not need a VPN, just pus enter. Otherwise, you need to ask to your net
  - Do you want to continue **YES**
  - Do you need to install poco libraries in the system with the following package libpoco-dev **YES**
 
-
+You may have an error here. Indeed, the openFramework.sh script calls a dated version of open framework. If there is a new version, the script will return an error. So you must change the command : 
+curl https://openframeworks.cc/ci_server/versions/nightly/of_v20190324_linux64gcc6_nightly.tar.gz --insecure -O
+with the latest version of open framework (that can be found here : https://openframeworks.cc/ci_server/versions/nightly/). 
 ## When installation finished
 
 ### Intepretable oF autostart
