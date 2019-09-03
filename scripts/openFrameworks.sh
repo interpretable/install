@@ -16,10 +16,10 @@ mkdir interprettable
 cd interprettable
 echo "-----------------------------------DOWNLOADING OF"
 # download openframeworks
-curl https://openframeworks.cc/ci_server/versions/nightly/of_v20190324_linux64gcc6_nightly.tar.gz --insecure -O
-tar -xvzf of_v20190324_linux64gcc6_nightly.tar.gz
-mv ./of_v20190324_linux64gcc6_release ./openFrameworks
-rm of_v20190324_linux64gcc6_nightly.tar.gz
+curl https://openframeworks.cc/ci_server/versions/nightly/of_v20190903_linux64gcc6_nightly.tar.gz --insecure -O
+tar -xvzf of_v20190903_linux64gcc6_nightly.tar.gz
+mv ./of_v20190903_linux64gcc6_release ./openFrameworks
+rm of_v20190903_linux64gcc6_nightly.tar.gz
 echo "-----------------------------------INSTALL OF DEPENDENCIES"
 # install dependencies
 cd openFrameworks/scripts/linux/ubuntu
