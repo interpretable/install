@@ -30,6 +30,7 @@ install.sh > installs the main LAMP libraries and vhosts
 start_dev.sh > installs creates
 
 ## API and BO installation
+Before doing anything with the terminal, please open the file scripts/openframework.sh and change the open version version to have the latest one. You can find it here : https://openframeworks.cc/ci_server/versions/nightly/. Be careful : you have to change it four times in that file. 
 
 to install the API and BO just launch the install.sh file
 > sudo sh install.sh
