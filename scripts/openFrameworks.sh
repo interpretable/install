@@ -19,7 +19,7 @@ echo "-----------------------------------DOWNLOADING OF"
 curl https://openframeworks.cc/ci_server/versions/nightly/of_v20190903_linux64gcc6_nightly.tar.gz --insecure -O
 tar -xvzf of_v20190903_linux64gcc6_nightly.tar.gz
 mv ./of_v20190903_linux64gcc6_release ./openFrameworks
-rm of_v20190903_linux64gcc6_nightly.tar.gz
+# rm of_v20190903_linux64gcc6_nightly.tar.gz
 echo "-----------------------------------INSTALL OF DEPENDENCIES"
 # install dependencies
 cd openFrameworks/scripts/linux/ubuntu
